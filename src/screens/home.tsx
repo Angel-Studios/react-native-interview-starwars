@@ -1,10 +1,15 @@
-import type { NavigationScreen, Screen } from 'app/navigation/types';
-import { StyleSheet, Text, View } from 'react-native';
+import { Screen } from 'app/navigation/types';
+import type { NavigationScreen } from 'app/navigation/types';
+import { Pressable, StyleSheet, Text, View } from 'react-native';
 
 export const Home: NavigationScreen<Screen.Home> = ({ navigation }) => {
   return (
     <View>
-      <Text>Home</Text>
+      <Pressable
+        onPress={() => navigation.navigate(Screen.Details, { id: 1234 })}
+      >
+        <Text>Home</Text>
+      </Pressable>
     </View>
   );
 };
